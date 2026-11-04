@@ -1,20 +1,34 @@
-import 'package:flutter/material.dart';
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class Post {
+  final int id;
+  final int userId;
+  final String title;
+  final String body;
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(' home screen'),),
-      body: Column(
-        children: [
-          Container(
-            width: 50,
-            height: 50,
-            color: Colors.brown,
-          )
-        ],
-      ),
+  Post({
+    required this.id,
+    required this.userId,
+    required this.title,
+    required this.body,
+  });
+
+  factory Post.fromJson(Map<String, dynamic> json) {
+    return Post(
+      id: json['id'] as int? ?? 0,
+      userId: json['userId'] as int? ?? 0,
+      title: json['title'] as String? ?? '',
+      body: json['body'] as String? ?? '',
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'userId': userId,
+      'title': title,
+      'body': body,
+    };
+  }
 }
+
+
+
