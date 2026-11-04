@@ -2,6 +2,16 @@
 
 A new Flutter project.
 
+## Functions & Models
+
+### `lib/home_screen.dart`
+
+Contains the `Post` model class for managing post data:
+
+- **`Post(...)`**: Main constructor requiring `id`, `userId`, `title`, and `body`.
+- **`Post.fromJson(Map<String, dynamic> json)`**: Factory constructor to deserialize JSON data into a `Post` object with fallback defaults.
+- **`Post.toJson()`**: Converts a `Post` instance into a `Map<String, dynamic>` for JSON serialization.
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
